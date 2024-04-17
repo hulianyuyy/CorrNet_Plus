@@ -25,14 +25,12 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td colspan="2">PHOENIX2014-T</td>
     </tr>
     <tr>
-        
         <td colspan="2">Dev(%)</td>
         <td colspan="2">Test(%)</td>
         <td rowspan="2">Dev(%)</td>
         <td rowspan="2">Test(%)</td>
     </tr>
     <tr>
-        
         <td>del/ins</td>
         <td>WER</td>
         <td>del/ins</td>
