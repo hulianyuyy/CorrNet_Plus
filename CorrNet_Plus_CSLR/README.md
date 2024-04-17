@@ -35,8 +35,6 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>WER</td>
         <td>del/ins</td>
         <td>WER</td>
-        <td></td>
-        <td></td>
     </tr>
     <tr>
         <td>FCN</td>
