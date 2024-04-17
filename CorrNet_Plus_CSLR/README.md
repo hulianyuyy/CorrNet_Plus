@@ -29,7 +29,7 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>WER</td>
     </tr>
     <tr>
-        <td>CVT-SLR</td>
+        <td>CVT-SLR(CVPR2023)</td>
         <td>6.4/2.6</td>
         <td>19.8</td>
         <td>6.1/2.3</td>
@@ -40,7 +40,7 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>-</td>
     </tr>
     <tr>
-        <td>CoSign-2s</td>
+        <td>CoSign-2s(ICCV2023)</td>
         <td>-</td>
         <td>19.7</td>
         <td>-</td>
@@ -51,7 +51,7 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>-</td>
     </tr>
     <tr>
-        <td>AdaSize</td>
+        <td>AdaSize(PR2024)</td>
         <td>7.0/2.6</td>
         <td>19.7</td>
         <td>7.2/3.1</td>
@@ -62,7 +62,7 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>30.9</td>
     </tr>
     <tr>
-        <td>AdaBrowse+</td>
+        <td>AdaBrowse+(ACMMM2023)</td>
         <td>6.0/2.5</td>
         <td>19.6</td>
         <td>5.9/2.6</td>
@@ -73,7 +73,7 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>30.7</td>
     </tr>
     <tr>
-        <td>SEN</td>
+        <td>SEN(AAAI2023)</td>
         <td>5.8/2.6</td>
         <td>19.5</td>
         <td>7.3/4.0</td>
@@ -84,7 +84,7 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>30.7</td>
     </tr>
     <tr>
-        <td>CTCA</td>
+        <td>CTCA(CVPR2023)</td>
         <td>6.2/2.9</td>
         <td>19.5</td>
         <td>6.1/2.6</td>
@@ -95,7 +95,7 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>29.4</td>
     </tr>
     <tr>
-        <td>C2SLR</td>
+        <td>C2SLR(CVPR2022)</td>
         <td>-</td>
         <td>20.5</td>
         <td>-</td>
