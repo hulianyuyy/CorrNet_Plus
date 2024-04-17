@@ -305,7 +305,7 @@ The code of CorrNet_Plus_SLT is updating and will be released later.
 As shown below, our method intelligently models the human body trajectories across adjacent frames and pays special attention to the moving human body parts.
 
 ![The visualizations of spatial-temporal correlation maps](./figure6.jpg "Heatmaps of human body trajectories")
-<center>Heatmaps of human body trajectories</center>
+<center style="font-size:14px;color:#C0C0C0;text-decoration:underline">Heatmaps of human body trajectories</center> 
 
 ## Data preparation, Environment, Training, Inference and Visualizations
 For detailed instructions of data preparation, environment, training, inference and visualizations, please refer to each sub-repo for guidance.
