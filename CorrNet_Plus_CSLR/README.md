@@ -122,6 +122,7 @@ This sub-repo holds the code for supporting the continuous sign language recogni
 - On the sign language translation task, CorrNet+ achieves superior performance on PHOENIX14, PHOENIX14-T and CSL-Daily datasets.
 
 <table>
+<tbody align="center" valign="center">
     <tr>
         <td colspan="11">PHOENIX2014-T</td>
     </tr>
@@ -294,6 +295,7 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <th>33.26</th>
         <th>26.14</th>
     </tr>
+</tbody>
 </table>
 
 ## Prerequisites
