@@ -52,17 +52,6 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>-</td>
     </tr>
     <tr>
-        <td>TLP</td>
-        <td>6.3/2.8</td>
-        <td>19.7</td>
-        <td>6.1/2.9</td>
-        <td>20.8</td>
-        <td>19.4</td>
-        <td>21.2</td>
-        <td>-</td>
-        <td>-</td>
-    </tr>
-    <tr>
         <td>CoSign-2s</td>
         <td>-</td>
         <td>19.7</td>
@@ -116,17 +105,6 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>20.3</td>
         <td>31.3</td>
         <td>29.4</td>
-    </tr>
-    <tr>
-        <td>STMC</td>
-        <td>7.7/3.4</td>
-        <td>21.1</td>
-        <td>7.4/2.6</td>
-        <td>20.7</td>
-        <td>19.6</td>
-        <td>21.0</td>
-        <td>-</td>
-        <td>-</td>
     </tr>
     <tr>
         <td>C2SLR</td>
