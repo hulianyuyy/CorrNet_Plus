@@ -150,6 +150,7 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <th>28.2</th>
     </tr>
 </table>
+
 ## Implementation
 The implementation for the CorrNet+ is given in [./modules/resnet.py](https://github.com/hulianyuyy/CorrNet_Plus/CorrNet_Plus_CSLR/modules/resnet.py).  
 
