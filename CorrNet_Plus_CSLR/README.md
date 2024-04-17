@@ -23,10 +23,13 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td rowspan="3">Method</td>
         <td colspan="4">PHOENIX2014</td>
         <td colspan="2">PHOENIX2014-T</td>
+        <td colspan="2">CSL-Daily</td>
     </tr>
     <tr>
         <td colspan="2">Dev(%)</td>
         <td colspan="2">Test(%)</td>
+        <td rowspan="2">Dev(%)</td>
+        <td rowspan="2">Test(%)</td>
         <td rowspan="2">Dev(%)</td>
         <td rowspan="2">Test(%)</td>
     </tr>
@@ -44,6 +47,8 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>20.1</td>
         <td>19.4</td>
         <td>20.3</td>
+        <td>-</td>
+        <td>-</td>
     </tr>
     <tr>
         <td>TLP</td>
@@ -53,6 +58,8 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>20.8</td>
         <td>19.4</td>
         <td>21.2</td>
+        <td>-</td>
+        <td>-</td>
     </tr>
     <tr>
         <td>CoSign-2s</td>
@@ -62,6 +69,30 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>20.1</td>
         <td>19.5</td>
         <td>20.1</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>AdaSize</td>
+        <td>7.0/2.6</td>
+        <td>19.7</td>
+        <td>7.2/3.1</td>
+        <td>20.9</td>
+        <td>19.7</td>
+        <td>21.2</td>
+        <td>31.3</td>
+        <td>30.9</td>
+    </tr>
+    <tr>
+        <td>AdaBrowse+</td>
+        <td>6.0/2.5</td>
+        <td>19.6</td>
+        <td>5.9/2.6</td>
+        <td>20.7</td>
+        <td>19.5</td>
+        <td>20.6</td>
+        <td>31.2</td>
+        <td>30.7</td>
     </tr>
     <tr>
         <td>SEN</td>
@@ -71,15 +102,19 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>21.0</td>
         <td>19.3</td>
         <td>20.7</td>
+        <td>31.1</td>
+        <td>30.7</td>
     </tr>
     <tr>
-        <td>RadialCTC</td>
-        <td>6.5/2.7</td>
-        <td>19.4</td>
+        <td>CTCA</td>
+        <td>6.2/2.9</td>
+        <td>19.5</td>
         <td>6.1/2.6</td>
-        <td>20.2</td>
-        <td>-</td>
-        <td>-</td>
+        <td>20.1</td>
+        <td>19.3</td>
+        <td>20.3</td>
+        <td>31.3</td>
+        <td>29.4</td>
     </tr>
     <tr>
         <td>STMC</td>
@@ -89,6 +124,8 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>20.7</td>
         <td>19.6</td>
         <td>21.0</td>
+        <td>-</td>
+        <td>-</td>
     </tr>
     <tr>
         <td>C2SLR</td>
@@ -98,15 +135,19 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>20.4</td>
         <td>20.2</td>
         <td>20.4</td>
+        <td>-</td>
+        <td>-</td>
     </tr>
     <tr>
         <td>CorrNet+</td>
         <td>5.3/2.7</td>
-        <td>18</td>
+        <th>18.0</th>
         <td>5.6/2.4</td>
-        <td>18.2</td>
-        <td>17.2</td>
-        <td>19.1</td>
+        <th>18.2</th>
+        <th>17.2</th>
+        <th>19.1</th>
+        <th>28.6</th>
+        <th>28.2</th>
     </tr>
 </table>
 ## Implementation
