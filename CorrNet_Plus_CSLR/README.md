@@ -18,7 +18,7 @@ This sub-repo holds the code for supporting the continuous sign language recogni
 - You can install other required modules by conducting 
    `pip install -r requirements.txt`
 
-<table>
+<table align="center">
     <tr>
         <td rowspan="3">Method</td>
         <td colspan="4">PHOENIX2014</td>
@@ -139,7 +139,7 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>-</td>
     </tr>
     <tr>
-        <td>CorrNet+</td>
+        <th>CorrNet+</th>
         <td>5.3/2.7</td>
         <th>18.0</th>
         <td>5.6/2.4</td>
