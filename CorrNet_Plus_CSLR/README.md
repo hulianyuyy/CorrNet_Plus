@@ -402,7 +402,7 @@ You can choose any one of following datasets to verify the effectiveness of Corr
 ​	To evaluate the pretrained model, choose the dataset from phoenix2014/phoenix2014-T/CSL/CSL-Daily in line 3 in ./config/baseline.yaml first, and run the command below：   
 `python main.py --device your_device --load-weights path_to_weight.pt --phase test`
 
-### Training
+## Training
 
 The priorities of configuration files are: command line > config file > default values of argparse. To train the SLR model, run the command below:
 
@@ -410,5 +410,5 @@ The priorities of configuration files are: command line > config file > default 
 
 Note that you can choose the target dataset from phoenix2014/phoenix2014-T/CSL/CSL-Daily in line 3 in ./config/baseline.yaml.
 
-### Visualizations
+## Visualizations
 For Grad-CAM visualization, you can replace the resnet.py under "./modules" with the resnet.py under "./weight_map_generation", and then run ```python generate_cam.py``` with your own hyperparameters.
