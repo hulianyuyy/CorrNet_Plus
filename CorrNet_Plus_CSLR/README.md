@@ -37,42 +37,6 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>WER</td>
     </tr>
     <tr>
-        <td>FCN</td>
-        <td>-</td>
-        <td>23.7</td>
-        <td>-</td>
-        <td>23.9</td>
-        <td>23.3</td>
-        <td>25.1</td>
-    </tr>
-    <tr>
-        <td>CMA</td>
-        <td>7.3/2.7</td>
-        <td>21.3</td>
-        <td>7.3/2.4</td>
-        <td>21.9</td>
-        <td>-</td>
-        <td>-</td>
-    </tr>
-    <tr>
-        <td>VAC</td>
-        <td>7.9/2.5</td>
-        <td>21.2</td>
-        <td>8.4/2.6</td>
-        <td>22.3</td>
-        <td>-</td>
-        <td>-</td>
-    </tr>
-    <tr>
-        <td>SMKD</td>
-        <td>6.8/2.5</td>
-        <td>20.8</td>
-        <td>6.3/2.3</td>
-        <td>21.0</td>
-        <td>20.8</td>
-        <td>22.4</td>
-    </tr>
-    <tr>
         <td>CVT-SLR</td>
         <td>6.4/2.6</td>
         <td>19.8</td>
@@ -100,24 +64,6 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>20.1</td>
     </tr>
     <tr>
-        <td>AdaSize</td>
-        <td>7.0/2.6</td>
-        <td>19.7</td>
-        <td>7.2/3.1</td>
-        <td>20.9</td>
-        <td>19.7</td>
-        <td>21.2</td>
-    </tr>
-    <tr>
-        <td>AdaBrowse+</td>
-        <td>6.0/2.5</td>
-        <td>19.6</td>
-        <td>5.9/2.6</td>
-        <td>20.7</td>
-        <td>19.5</td>
-        <td>20.6</td>
-    </tr>
-    <tr>
         <td>SEN</td>
         <td>5.8/2.6</td>
         <td>19.5</td>
@@ -127,47 +73,11 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>20.7</td>
     </tr>
     <tr>
-        <td>CTCA</td>
-        <td>6.2/2.9</td>
-        <td>19.5</td>
-        <td>6.1/2.6</td>
-        <td>20.1</td>
-        <td>19.3</td>
-        <td>20.3</td>
-    </tr>
-    <tr>
         <td>RadialCTC</td>
         <td>6.5/2.7</td>
         <td>19.4</td>
         <td>6.1/2.6</td>
         <td>20.2</td>
-        <td>-</td>
-        <td>-</td>
-    </tr>
-    <tr>
-        <td>SLT</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>24.5</td>
-        <td>24.6</td>
-    </tr>
-    <tr>
-        <td>C+L+H</td>
-        <td>-</td>
-        <td>26.0</td>
-        <td>-</td>
-        <td>26.0</td>
-        <td>22.1</td>
-        <td>24.1</td>
-    </tr>
-    <tr>
-        <td>DNF</td>
-        <td>7.3/3.3</td>
-        <td>23.1</td>
-        <td>6.7/3.3</td>
-        <td>22.9</td>
         <td>-</td>
         <td>-</td>
     </tr>
