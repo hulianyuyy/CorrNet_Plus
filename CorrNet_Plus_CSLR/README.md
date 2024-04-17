@@ -20,25 +20,19 @@ This sub-repo holds the code for supporting the continuous sign language recogni
 
 <table>
     <tr>
-        <td>Method</td>
-        <td>PHOENIX2014</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>PHOENIX2014-T</td>
-        <td></td>
+        <td rowspan="3">Method</td>
+        <td colspan="4">PHOENIX2014</td>
+        <td colspan="2">PHOENIX2014-T</td>
     </tr>
     <tr>
-        <td></td>
-        <td>Dev(%)</td>
-        <td></td>
-        <td>Test(%)</td>
-        <td></td>
-        <td>Dev(%)</td>
-        <td>Test(%)</td>
+        
+        <td colspan="2">Dev(%)</td>
+        <td colspan="2">Test(%)</td>
+        <td rowspan="2">Dev(%)</td>
+        <td rowspan="2">Test(%)</td>
     </tr>
     <tr>
-        <td></td>
+        
         <td>del/ins</td>
         <td>WER</td>
         <td>del/ins</td>
@@ -207,87 +201,6 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>18.2</td>
         <td>17.2</td>
         <td>19.1</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
     </tr>
 </table>
 ## Implementation
