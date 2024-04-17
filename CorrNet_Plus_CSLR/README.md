@@ -29,7 +29,7 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>WER</td>
     </tr>
     <tr>
-        <td>CVT-SLR(CVPR2023)</td>
+        <td>CVT-SLR (CVPR2023)</td>
         <td>6.4/2.6</td>
         <td>19.8</td>
         <td>6.1/2.3</td>
@@ -40,7 +40,7 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>-</td>
     </tr>
     <tr>
-        <td>CoSign-2s(ICCV2023)</td>
+        <td>CoSign-2s (ICCV2023)</td>
         <td>-</td>
         <td>19.7</td>
         <td>-</td>
@@ -51,7 +51,7 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>-</td>
     </tr>
     <tr>
-        <td>AdaSize(PR2024)</td>
+        <td>AdaSize (PR2024)</td>
         <td>7.0/2.6</td>
         <td>19.7</td>
         <td>7.2/3.1</td>
@@ -62,7 +62,7 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>30.9</td>
     </tr>
     <tr>
-        <td>AdaBrowse+(ACMMM2023)</td>
+        <td>AdaBrowse+ (ACMMM2023)</td>
         <td>6.0/2.5</td>
         <td>19.6</td>
         <td>5.9/2.6</td>
@@ -73,7 +73,7 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>30.7</td>
     </tr>
     <tr>
-        <td>SEN(AAAI2023)</td>
+        <td>SEN (AAAI2023)</td>
         <td>5.8/2.6</td>
         <td>19.5</td>
         <td>7.3/4.0</td>
@@ -84,7 +84,7 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>30.7</td>
     </tr>
     <tr>
-        <td>CTCA(CVPR2023)</td>
+        <td>CTCA (CVPR2023)</td>
         <td>6.2/2.9</td>
         <td>19.5</td>
         <td>6.1/2.6</td>
@@ -95,7 +95,7 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>29.4</td>
     </tr>
     <tr>
-        <td>C2SLR(CVPR2022)</td>
+        <td>C2SLR (CVPR2022)</td>
         <td>-</td>
         <td>20.5</td>
         <td>-</td>
@@ -145,7 +145,7 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>BLEU4</td>
     </tr>
     <tr>
-        <td>SignBT(CVPR2021)</td>
+        <td>SignBT (CVPR2021)</td>
         <td>50.29</td>
         <td>51.11</td>
         <td>37.90</td>
@@ -158,7 +158,7 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>24.32</td>
     </tr>
     <tr>
-        <td>MMTLB(CVPR2022)</td>
+        <td>MMTLB (CVPR2022)</td>
         <td>53.10</td>
         <td>53.95</td>
         <td>41.12</td>
@@ -171,7 +171,7 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>28.39</td>
     </tr>
     <tr>
-        <td>SLTUNET(ICLR2023)</td>
+        <td>SLTUNET (ICLR2023)</td>
         <td>52.23</td>
         <td>-</td>
         <td>-</td>
@@ -184,7 +184,7 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>28.47</td>
     </tr>
     <tr>
-        <td>TwoStream-SLT(NeuIPS2023)</td>
+        <td>TwoStream-SLT (NeuIPS2023)</td>
         <td>54.08</td>
         <td>54.32</td>
         <td>41.99</td>
@@ -231,7 +231,7 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>BLEU4</td>
     </tr>
     <tr>
-        <td>SignBT(CVPR2021)</td>
+        <td>SignBT (CVPR2021)</td>
         <td>49.49</td>
         <td>51.46</td>
         <td>37.23</td>
@@ -244,7 +244,7 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>21.34</td>
     </tr>
     <tr>
-        <td>MMTLB(CVPR2022)</td>
+        <td>MMTLB (CVPR2022)</td>
         <td>53.38</td>
         <td>53.81</td>
         <td>40.84</td>
@@ -257,7 +257,7 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>23.92</td>
     </tr>
     <tr>
-        <td>SLTUNET(ICLR2023)</td>
+        <td>SLTUNET (ICLR2023)</td>
         <td>53.58</td>
         <td>-</td>
         <td>-</td>
@@ -270,7 +270,7 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <td>25.01</td>
     </tr>
     <tr>
-        <td>TwoStream-SLT(NeuIPS2023)</td>
+        <td>TwoStream-SLT (NeuIPS2023)</td>
         <td>55.10</td>
         <td>55.21</td>
         <td>42.31</td>
@@ -383,7 +383,7 @@ You can choose any one of following datasets to verify the effectiveness of Corr
 
 | Backbone | Dev WER  | Test WER  | Pretrained model                                             |
 | -------- | ---------- | ----------- | --- |
-| ResNet18 | 18.8%      | 19.4%       | [[Baidu]](https://pan.baidu.com/s/1DIGts18fdh4Fdw_y7ZQ6XA) (passwd: skd3)<br />[[Google Drive]](https://drive.google.com/file/d/1Xt_4N-HjEGlVyrMENydsxNtpVMSg5zDb/view?usp=share_link) |
+| ResNet18 | 18.8%      | 19.4%       | [[Baidu]](https://pan.baidu.com/s/1vlCMSuqZiZkvidg4wrDlZQ?pwd=w5w9) <br />[[Google Drive]](https://drive.google.com/file/d/1jcRv4Gl98mvS4mmLH5dBU_-iN3qGq8Si/view?usp=sharing) |
 
 We wrongly delete the original checkpoint and retrain the model with similar accuracy (Dev: 18.9%, Test: 19.7%)
 
@@ -391,7 +391,7 @@ We wrongly delete the original checkpoint and retrain the model with similar acc
 
 | Backbone | Dev WER  | Test WER  | Pretrained model                                             |
 | -------- | ---------- | ----------- | --- |
-| ResNet18 | 18.9%      | 20.5%       | [[Baidu]](https://pan.baidu.com/s/1osUDzpPhKPDavxyvqOrVfQ) (passwd: deuq)<br />[[Google Drive]](https://drive.google.com/file/d/1c_wNHYMqCbqRE5KqrQL1P6chOw5VBS6Q/view?usp=share_link) |
+| ResNet18 | 18.9%      | 20.5%       | [[Baidu]](https://pan.baidu.com/s/1PcQtWOhiTEq9RFgBZ2hWhQ?pwd=nm3c) <br />[[Google Drive]](https://drive.google.com/file/d/1uBaKoB2JaB3ydYXmpn1tv0mBZ7cAF8J9/view?usp=sharing) |
 
 ### CSL-Daily dataset
 
@@ -399,7 +399,7 @@ To evaluate upon CSL-Daily with this checkpoint, you should remove the CorrNet b
 
 | Backbone | Dev WER  | Test WER  | Pretrained model                                            |
 | -------- | ---------- | ----------- | --- |
-| ResNet18 | 30.6%      | 30.1%       | [[Baidu]](https://pan.baidu.com/s/1WzNltivGRbfV33wkM4rzjg) (passwd: u2iv)<br />[[Google Drive]](https://drive.google.com/file/d/1-aSKPe9cVkvHeiJuyQm3HlZ5u63CI-mm/view?usp=share_link) |
+| ResNet18 | 30.6%      | 30.1%       | [[Baidu]](https://pan.baidu.com/s/1SbulBImqn78FEYFZV5Oz1w?pwd=mx8m) <br />[[Google Drive]](https://drive.google.com/file/d/1Ve_uzEB1teTmebuQ1XAMFQ0UV0EVEGyM/view?usp=sharing) |
 
 
 ​	To evaluate the pretrained model, choose the dataset from phoenix2014/phoenix2014-T/CSL/CSL-Daily in line 3 in ./config/baseline.yaml first, and run the command below：   
@@ -412,21 +412,7 @@ The priorities of configuration files are: command line > config file > default 
 `python main.py --device your_device`
 
 Note that you can choose the target dataset from phoenix2014/phoenix2014-T/CSL/CSL-Daily in line 3 in ./config/baseline.yaml.
- 
-For CSL-Daily dataset, You may choose to reduce the lr by half from 0.0001 to 0.00005, change the lr deacying rate (gamma in the 'optimizer.py') from 0.2 to 0.5, and disable the temporal resampling strategy (comment line 121 in dataloader_video.py).
+
 
 ### Visualizations
 For Grad-CAM visualization, you can replace the resnet.py under "./modules" with the resnet.py under "./weight_map_generation", and then run ```python generate_cam.py``` with your own hyperparameters.
-
-### Citation
-
-If you find this repo useful in your research works, please consider citing:
-
-```latex
-@inproceedings{hu2023continuous,
-  title={Continuous Sign Language Recognition with Correlation Network},
-  author={Hu, Lianyu and Gao, Liqing and Liu, Zekang and Feng, Wei},
-  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
-  year={2023},
-}
-```
