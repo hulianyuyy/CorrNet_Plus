@@ -12,7 +12,7 @@ import utils
 dataset = 'phoenix2014'
 prefix = './dataset/phoenix2014/phoenix-2014-multisigner'
 dict_path = f'./preprocess/{dataset}/gloss_dict.npy'
-model_weights = './work_dir/baseline_res18_dist_25_amt_1_n_3_before_add_neighbor_135_lift_tsem_b8_e80/_best_model.pt'
+model_weights = 'path_to_model.pt'
 select_id = 2 # The video selected to show. 539 for 31October_2009_Saturday_tagesschau_default-8, 0 for 01April_2010_Thursday_heute_default-1, 1 for 01August_2011_Monday_heute_default-6, 2 for 01December_2011_Thursday_heute_default-3
 #name = '01April_2010_Thursday_heute_default-1'
 
@@ -64,7 +64,6 @@ vid = torch.cat(
     , dim=0).unsqueeze(0)
 
 fmap_block = list()
-#grad_block = list()
 
 device = utils.GpuDataParallel()
 device.set_device(5)
@@ -78,8 +77,6 @@ model = model.to(device.output_device)
 model.cuda()
 
 model.train()
-#def backward_hook(module, grad_in, grad_out):
-#    grad_block.append(grad_out[0].detach())  #N, C, T, H, W 
 
 def forward_hook(module, input, output):
     fmap_block.append(output)       #N, C, T, H, ,W 
@@ -102,15 +99,6 @@ def cam_show_img(img, feature_map, grads, out_dir):  # img: ntchw, feature_map: 
         import shutil
         shutil.rmtree(out_dir)
         os.makedirs(out_dir)
-    '''for i in range(len(img_list)):
-        out_cam = cam[i+left_pad]
-        out_cam = out_cam / out_cam.max()
-        out_cam = cv2.resize(out_cam, (img.shape[3], img.shape[4]))
-        out_cam = (255 * out_cam).astype(np.uint8)
-        heatmap = cv2.applyColorMap(out_cam, cv2.COLORMAP_JET)
-        cam_img = 0.3 * heatmap + 0.7* img_list[i][16:240,16:240] 
-        path_cam_img = os.path.join(out_dir, f"cam_{i}.jpg")
-        cv2.imwrite(path_cam_img, cam_img)'''
     for i in range(T):
         out_cam = cam[i]
         out_cam = out_cam - np.min(out_cam)
@@ -118,8 +106,6 @@ def cam_show_img(img, feature_map, grads, out_dir):  # img: ntchw, feature_map: 
         out_cam = cv2.resize(out_cam, (img.shape[3], img.shape[4]))
         out_cam = (255 * out_cam).astype(np.uint8)
         heatmap = cv2.applyColorMap(out_cam, cv2.COLORMAP_JET)
-        #heatmap = cv2.cvtColor(heatmap, cv2.COLOR_BGR2RGB)
-        #cam_img = 0.3 * heatmap + (0.7 * (img[0,i]+1)*127.5).permute(1,2,0).cpu().data.numpy().astype(np.uint8)
         cam_img = np.float32(heatmap) / 255 + (img[0,i]/2+0.5).permute(1,2,0).cpu().data.numpy()
         cam_img = cam_img/np.max(cam_img)
         cam_img = np.uint8(255 * cam_img)
@@ -140,8 +126,7 @@ for i in range(ret_dict['sequence_logits'].size(0)):
     class_loss = ret_dict['sequence_logits'][i, 0, idx]
     class_loss.backward(retain_graph=True)
 # 生成cam
-#grads_val = torch.stack(grad_block,1).mean(1).cpu().data.numpy()
 grads_val = torch.load('./weight_map.pth').cpu().data.numpy()
 fmap = fmap_block[0].cpu().data.numpy()
 # 保存cam图片
-cam_show_img(vid, fmap, grads_val, out_dir='./agg_map_layer3')
+cam_show_img(vid, fmap, grads_val, out_dir='./agg_map')

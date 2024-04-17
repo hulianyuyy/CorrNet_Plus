@@ -73,7 +73,6 @@ class UnfoldTemporalWindows(nn.Module):
         x = x.view(N, C, T, H*W)
         x = self.unfold(x)  #(N, C*Window_Size, T, H*W)
         # Permute extra channels from window size to the graph dimension; -1 for number of windows
-        #x = x.view(N, T, C, self.window_size,self.window_size, H, W).permute(0,2,1,3,4,5,6).contiguous() # NCTSHW
         x = x.view(N, C, self.window_size, T, H, W).permute(0,1,3,2,4,5).reshape(N, C, T, self.window_size, H, W).contiguous()# NCTSHW
         return x
 
@@ -83,7 +82,6 @@ class Temporal_weighting(nn.Module):
         hidden_size = input_size//16
         self.conv_transform = nn.Conv1d(input_size, hidden_size, kernel_size=1, stride=1, padding=0)
         self.conv_back = nn.Conv1d(hidden_size, input_size, kernel_size=1, stride=1, padding=0)
-        #self.conv_enhance = nn.Conv1d(hidden_size, hidden_size, kernel_size=9, stride=1, padding=4)
         self.num = 3
         self.conv_enhance = nn.ModuleList([
             nn.Conv1d(hidden_size, hidden_size, kernel_size=3, stride=1, padding=int(i+1), groups=hidden_size, dilation=int(i+1)) for i in range(self.num)
@@ -104,8 +102,6 @@ class Get_Correlation(nn.Module):
     def __init__(self, channels, neighbors=3):
         super().__init__()
         reduction_channel = channels//16
-        #self.conv = nn.Conv3d(2, channels, kernel_size=1, bias=False)
-        #self.conv = nn.Conv3d(reduction_channel, channels, kernel_size=1, bias=False)
 
         self.down_conv2 = nn.Conv3d(channels, channels, kernel_size=1, bias=False)
         self.neighbors = neighbors
@@ -126,11 +122,6 @@ class Get_Correlation(nn.Module):
         self.spatial_aggregation3 = nn.Conv3d(reduction_channel, reduction_channel, kernel_size=(9,3,3), padding=(4,3,3), dilation=(1,3,3), groups=reduction_channel)
         self.weights = nn.Parameter(torch.ones(3) / 3, requires_grad=True)
         self.conv_back = nn.Conv3d(reduction_channel, channels, kernel_size=1, bias=False)
-        # For assigning aggregated_x with affinities_forward and affinities_backward
-        #self.weights = nn.Parameter(torch.ones(1,1,self.neighbors*2,1,1) / (self.neighbors*2), requires_grad=True)
-        # For calculating neighboring_affinities with torch einsum
-        #self.weights = nn.Parameter(torch.ones(1,1,1,self.neighbors*2,1,1) / (self.neighbors*2), requires_grad=True)
-        #self.down_conv = nn.Conv3d(channels, channels, kernel_size=1, bias=False)
 
     def forward(self, x):
         N, C, T, H, W = x.shape
@@ -138,25 +129,7 @@ class Get_Correlation(nn.Module):
             affinities = torch.einsum('bctp,bctl->btpl', query, key)
             return torch.einsum('bctl,btpl->bctp', key, F.sigmoid(affinities)-0.5)
 
-        
-        #x_mean = self.attpool(x) #NCTP1
-        #x_mean = x.mean(3, keepdim=True).mean(4, keepdim=True)
-        '''x_mean = x.max(3, keepdim=True)[0].max(4, keepdim=True)[0]
-        x2 = self.down_conv2(x)
-        affinities_forward = []
-        affinities_backward = []
-        for i in range(self.neighbors):
-            affinities_forward.append(torch.einsum('bcthw,bctsd->bthwsd', x_mean, torch.concat([x2[:,:,i+1:], x2[:,:,-1:].repeat(1,1,i+1,1,1)], 2)))
-            affinities_backward.append(torch.einsum('bcthw,bctsd->bthwsd', x_mean, torch.concat([x2[:,:,:1].repeat(1,1,i+1,1,1), x2[:,:,:-(i+1)]], 2)))
-        features = 0
-        for i in range(self.neighbors):
-            features = features + torch.einsum('bctsd,bthwsd->bcthw', torch.concat([x2[:,:,i+1:], x2[:,:,-1:].repeat(1,1,i+1,1,1)], 2), F.sigmoid(affinities_forward[i])-0.5 )* self.weights2[i] + \
-            torch.einsum('bctsd,bthwsd->bcthw', torch.concat([x2[:,:,:1].repeat(1,1,i+1,1,1), x2[:,:,:-(i+1)]], 2), F.sigmoid(affinities_backward[i])-0.5 ) * self.weights2[i+self.neighbors] '''
-
-        
-        #x_mean = self.attpool(x) #NCTP
         x_mean = x.mean(3, keepdim=True).mean(4, keepdim=False)
-        #x_mean = x.max(-1, keepdim=False)[0].max(-1, keepdim=True)[0]
         x_max = x.max(-1, keepdim=False)[0].max(-1, keepdim=True)[0]
         x_att = self.attpool(x) #NCTP
         x2 = self.down_conv2(x)
@@ -164,52 +137,15 @@ class Get_Correlation(nn.Module):
         upfold = (torch.concat([upfold[:,:,:,:self.neighbors], upfold[:,:,:,self.neighbors+1:]],3)* self.weights2.view(1, 1, 1, -1, 1, 1)).view(N, C, T, -1)
         x_mean = x_mean*self.weights4[0] + x_max*self.weights4[1] + x_att*self.weights4[2]
         x_mean = clustering(x_mean, upfold)
-        #x_max = clustering(x_max, upfold)
-        #x_att = clustering(x_att, upfold)
         features = x_mean.view(N, C, T, self.clusters, 1)
-        #features = x_mean.view(N, C, T, self.clusters, 1) * self.weights3[0] + x_max.view(N, C, T, self.clusters, 1) * self.weights3[1] + x_att.view(N, C, T, self.clusters, 1) * self.weights3[2]
-        #features = clustering(x.view(N, C, T, H*W), x_mean).view(N, C, T, H, W)
-        # TODO: (1) concat features as output; (2) add channel attention; (3) combine pooling and agg, respectively; (4) adaptively perform temporal weighting; (5) LIP replace attention pooling; (6) replace sigmoid - 0.5 with sigmoid; (7) 
-
-        # reverse aggregation
-        '''x2 = self.down_conv2(x)
-        x_mean = self.attpool(x2).view(N, C, T, self.clusters, 1) #NCTP1
-        upfold = self.unfold(x_mean)
-        upfold = (torch.concat([upfold[:,:,:,:self.neighbors], upfold[:,:,:,self.neighbors+1:]],3)* self.weights2.view(1, 1, 1, -1, 1, 1)).view(N, C, T, -1) 
-        features = clustering(x.view(N, C, T, -1), upfold).view(N, C, T, H, W)'''
 
         x_down = self.down_conv(x)
         aggregated_x = self.spatial_aggregation1(x_down)*self.weights[0] + self.spatial_aggregation2(x_down)*self.weights[1] \
                     + self.spatial_aggregation3(x_down)*self.weights[2]
         aggregated_x = self.conv_back(aggregated_x)
-
-        '''B, C, T, H, W = x2.shape
-        aggregated_x = torch.zeros((B, T, self.neighbors*2, 1, 1, H, W)).to(x.get_device())
-        for i in range(T):
-            for j in range(1, self.neighbors+1):
-                if i-j<0:
-                    aggregated_x[:,i,j-1,:,:,:,:] =  affinities_forward[j-1][:,0]
-                else:
-                    aggregated_x[:,i,j-1,:,:,:,:] =  affinities_forward[j-1][:,i-j]
-                if i+j>=T:
-                    aggregated_x[:,i,j-1+self.neighbors,:,:,:,:] =  affinities_backward[j-1][:,T-1]
-                else:
-                    aggregated_x[:,i,j-1+self.neighbors,:,:,:,:] =  affinities_backward[j-1][:,i+j]
-        aggregated_x = (aggregated_x.squeeze(3).squeeze(3)*self.weights).sum(2).unsqueeze(1)'''
-
-        '''x3 = self.down_conv(x)
-        x3 = x3.mean(3, keepdim=True).mean(4, keepdim=True)
-        neighboring_affinities = []
-        for i in range(self.neighbors):
-            neighboring_affinities.append(torch.einsum('bcthw,bctsd->bthwsd', x, torch.concat([x3[:,:,i+1:], x3[:,:,-1:].repeat(1,1,i+1,1,1)], 2)))
-            neighboring_affinities.append(torch.einsum('bcthw,bctsd->bthwsd', x, torch.concat([x3[:,:,:1].repeat(1,1,i+1,1,1), x3[:,:,:-(i+1)]], 2)))
-        neighboring_affinities = torch.stack(neighboring_affinities, dim=2)
-        aggregated_x = (neighboring_affinities.squeeze(-1).squeeze(-1).unsqueeze(1) * self.weights).sum(3) # btshwsd->btshw->bctshw->bcthw'''
         
         features = features * (F.sigmoid(aggregated_x)-0.5)
         return features
-        #return features, F.sigmoid(self.mlp(x.mean(-1, keepdim=True).mean(-1, keepdim=True).mean(-1, keepdim=True)))
-        #return  features + (features* F.sigmoid(self.mlp(x.mean(-1, keepdim=True).mean(-1, keepdim=True).mean(-1, keepdim=True)))-0.5)
         
 
 def conv3x3(in_planes, out_planes, stride=1):
@@ -234,21 +170,16 @@ class BasicBlock(nn.Module):
         self.bn2 = nn.BatchNorm3d(planes)
         self.downsample = downsample
         self.stride = stride
-        #self.corr = Get_Correlation(inplanes)
-        #self.alpha = nn.Parameter(torch.zeros(1), requires_grad=True)
 
     def forward(self, x):
         residual = x
 
-        #out = x + self.corr(x) * self.alpha
-        #out = self.conv1(out)
         out = self.conv1(x)
         out = self.bn1(out)
         out = self.relu(out)
 
         out = self.conv2(out)
         out = self.bn2(out)
-        #out = out + self.corr(out) * self.alpha
 
         if self.downsample is not None:
             residual = self.downsample(x)
@@ -268,9 +199,7 @@ class ResNet(nn.Module):
         self.bn1 = nn.BatchNorm3d(64)
         self.relu = nn.ReLU(inplace=True)
         self.maxpool = nn.MaxPool3d(kernel_size=(1,3,3), stride=(1,2,2), padding=(0,1,1))
-        #self.corr0 = Get_Correlation(64)
         self.layer1 = self._make_layer(block, 64, layers[0])
-        #self.corr1 = Get_Correlation(self.inplanes, neighbors=1)
         self.layer2 = self._make_layer(block, 128, layers[1], stride=2)
         self.corr2 = Get_Correlation(self.inplanes, neighbors=1)
         self.temporal_weight2 = Temporal_weighting(self.inplanes)
@@ -315,9 +244,7 @@ class ResNet(nn.Module):
         x = self.relu(x)
         x = self.maxpool(x)
 
-        #x = x + self.corr0(x) * self.alpha[0]
         x = self.layer1(x)
-        #x = x + self.corr1(x) * self.alpha[0]
         x = self.layer2(x) 
         #aug_x, affinities = self.corr2(x)
         #x = x + aug_x * self.alpha[0]

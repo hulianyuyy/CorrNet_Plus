@@ -1,6 +1,6 @@
 feeder: dataset.dataloader_video.BaseFeeder
 phase: train
-dataset: phoenix2014-T #CSL-Daily, phoenix2014-T, phoenix2014, CSL
+dataset: CSL-Daily #CSL-Daily, phoenix2014-T, phoenix2014, CSL
 # dataset: phoenix14-si5
 num_epoch: 80
 work_dir: ./work_dir/baseline/
