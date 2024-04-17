@@ -20,129 +20,129 @@ This sub-repo holds the code for supporting the continuous sign language recogni
 
 <table align="center">
     <tr>
-        <td rowspan="3">Method</td>
-        <td colspan="4">PHOENIX2014</td>
-        <td colspan="2">PHOENIX2014-T</td>
-        <td colspan="2">CSL-Daily</td>
+        <th rowspan="3">Method</th>
+        <th colspan="4">PHOENIX2014</th>
+        <th colspan="2">PHOENIX2014-T</th>
+        <th colspan="2">CSL-Daily</th>
     </tr>
     <tr>
-        <td colspan="2">Dev(%)</td>
-        <td colspan="2">Test(%)</td>
-        <td rowspan="2">Dev(%)</td>
-        <td rowspan="2">Test(%)</td>
-        <td rowspan="2">Dev(%)</td>
-        <td rowspan="2">Test(%)</td>
+        <th colspan="2">Dev(%)</th>
+        <th colspan="2">Test(%)</th>
+        <th rowspan="2">Dev(%)</th>
+        <th rowspan="2">Test(%)</th>
+        <th rowspan="2">Dev(%)</th>
+        <th rowspan="2">Test(%)</th>
     </tr>
     <tr>
-        <td>del/ins</td>
-        <td>WER</td>
-        <td>del/ins</td>
-        <td>WER</td>
+        <th>del/ins</th>
+        <th>WER</th>
+        <th>del/ins</th>
+        <th>WER</th>
     </tr>
     <tr>
-        <td>CVT-SLR</td>
-        <td>6.4/2.6</td>
-        <td>19.8</td>
-        <td>6.1/2.3</td>
-        <td>20.1</td>
-        <td>19.4</td>
-        <td>20.3</td>
-        <td>-</td>
-        <td>-</td>
+        <th>CVT-SLR</th>
+        <th>6.4/2.6</th>
+        <th>19.8</th>
+        <th>6.1/2.3</th>
+        <th>20.1</th>
+        <th>19.4</th>
+        <th>20.3</th>
+        <th>-</th>
+        <th>-</th>
     </tr>
     <tr>
-        <td>TLP</td>
-        <td>6.3/2.8</td>
-        <td>19.7</td>
-        <td>6.1/2.9</td>
-        <td>20.8</td>
-        <td>19.4</td>
-        <td>21.2</td>
-        <td>-</td>
-        <td>-</td>
+        <th>TLP</th>
+        <th>6.3/2.8</th>
+        <th>19.7</th>
+        <th>6.1/2.9</th>
+        <th>20.8</th>
+        <th>19.4</th>
+        <th>21.2</th>
+        <th>-</th>
+        <th>-</th>
     </tr>
     <tr>
-        <td>CoSign-2s</td>
-        <td>-</td>
-        <td>19.7</td>
-        <td>-</td>
-        <td>20.1</td>
-        <td>19.5</td>
-        <td>20.1</td>
-        <td>-</td>
-        <td>-</td>
+        <th>CoSign-2s</th>
+        <th>-</th>
+        <th>19.7</th>
+        <th>-</th>
+        <th>20.1</th>
+        <th>19.5</th>
+        <th>20.1</th>
+        <th>-</th>
+        <th>-</th>
     </tr>
     <tr>
-        <td>AdaSize</td>
-        <td>7.0/2.6</td>
-        <td>19.7</td>
-        <td>7.2/3.1</td>
-        <td>20.9</td>
-        <td>19.7</td>
-        <td>21.2</td>
-        <td>31.3</td>
-        <td>30.9</td>
+        <th>AdaSize</th>
+        <th>7.0/2.6</th>
+        <th>19.7</th>
+        <th>7.2/3.1</th>
+        <th>20.9</th>
+        <th>19.7</th>
+        <th>21.2</th>
+        <th>31.3</th>
+        <th>30.9</th>
     </tr>
     <tr>
-        <td>AdaBrowse+</td>
-        <td>6.0/2.5</td>
-        <td>19.6</td>
-        <td>5.9/2.6</td>
-        <td>20.7</td>
-        <td>19.5</td>
-        <td>20.6</td>
-        <td>31.2</td>
-        <td>30.7</td>
+        <th>AdaBrowse+</th>
+        <th>6.0/2.5</th>
+        <th>19.6</th>
+        <th>5.9/2.6</th>
+        <th>20.7</th>
+        <th>19.5</th>
+        <th>20.6</th>
+        <th>31.2</th>
+        <th>30.7</th>
     </tr>
     <tr>
-        <td>SEN</td>
-        <td>5.8/2.6</td>
-        <td>19.5</td>
-        <td>7.3/4.0</td>
-        <td>21.0</td>
-        <td>19.3</td>
-        <td>20.7</td>
-        <td>31.1</td>
-        <td>30.7</td>
+        <th>SEN</th>
+        <th>5.8/2.6</th>
+        <th>19.5</th>
+        <th>7.3/4.0</th>
+        <th>21.0</th>
+        <th>19.3</th>
+        <th>20.7</th>
+        <th>31.1</th>
+        <th>30.7</th>
     </tr>
     <tr>
-        <td>CTCA</td>
-        <td>6.2/2.9</td>
-        <td>19.5</td>
-        <td>6.1/2.6</td>
-        <td>20.1</td>
-        <td>19.3</td>
-        <td>20.3</td>
-        <td>31.3</td>
-        <td>29.4</td>
+        <th>CTCA</th>
+        <th>6.2/2.9</th>
+        <th>19.5</th>
+        <th>6.1/2.6</th>
+        <th>20.1</th>
+        <th>19.3</th>
+        <th>20.3</th>
+        <th>31.3</th>
+        <th>29.4</th>
     </tr>
     <tr>
-        <td>STMC</td>
-        <td>7.7/3.4</td>
-        <td>21.1</td>
-        <td>7.4/2.6</td>
-        <td>20.7</td>
-        <td>19.6</td>
-        <td>21.0</td>
-        <td>-</td>
-        <td>-</td>
+        <th>STMC</th>
+        <th>7.7/3.4</th>
+        <th>21.1</th>
+        <th>7.4/2.6</th>
+        <th>20.7</th>
+        <th>19.6</th>
+        <th>21.0</th>
+        <th>-</th>
+        <th>-</th>
     </tr>
     <tr>
-        <td>C2SLR</td>
-        <td>-</td>
-        <td>20.5</td>
-        <td>-</td>
-        <td>20.4</td>
-        <td>20.2</td>
-        <td>20.4</td>
-        <td>-</td>
-        <td>-</td>
+        <th>C2SLR</th>
+        <th>-</th>
+        <th>20.5</th>
+        <th>-</th>
+        <th>20.4</th>
+        <th>20.2</th>
+        <th>20.4</th>
+        <th>-</th>
+        <th>-</th>
     </tr>
     <tr>
         <th>CorrNet+</th>
-        <td>5.3/2.7</td>
+        <th>5.3/2.7</th>
         <th>18.0</th>
-        <td>5.6/2.4</td>
+        <th>5.6/2.4</th>
         <th>18.2</th>
         <th>17.2</th>
         <th>19.1</th>
