@@ -383,23 +383,20 @@ You can choose any one of following datasets to verify the effectiveness of Corr
 
 | Backbone | Dev WER  | Test WER  | Pretrained model                                             |
 | -------- | ---------- | ----------- | --- |
-| ResNet18 | 18.8%      | 19.4%       | [[Baidu]](https://pan.baidu.com/s/1vlCMSuqZiZkvidg4wrDlZQ?pwd=w5w9) <br />[[Google Drive]](https://drive.google.com/file/d/1jcRv4Gl98mvS4mmLH5dBU_-iN3qGq8Si/view?usp=sharing) |
+| ResNet18 | 18.0%      | 18.2%       | [[Baidu]](https://pan.baidu.com/s/1vlCMSuqZiZkvidg4wrDlZQ?pwd=w5w9) <br />[[Google Drive]](https://drive.google.com/file/d/1jcRv4Gl98mvS4mmLH5dBU_-iN3qGq8Si/view?usp=sharing) |
 
-We wrongly delete the original checkpoint and retrain the model with similar accuracy (Dev: 18.9%, Test: 19.7%)
 
 ### PHOENIX2014-T dataset
 
 | Backbone | Dev WER  | Test WER  | Pretrained model                                             |
 | -------- | ---------- | ----------- | --- |
-| ResNet18 | 18.9%      | 20.5%       | [[Baidu]](https://pan.baidu.com/s/1PcQtWOhiTEq9RFgBZ2hWhQ?pwd=nm3c) <br />[[Google Drive]](https://drive.google.com/file/d/1uBaKoB2JaB3ydYXmpn1tv0mBZ7cAF8J9/view?usp=sharing) |
+| ResNet18 | 17.2%      | 19.1%       | [[Baidu]](https://pan.baidu.com/s/1PcQtWOhiTEq9RFgBZ2hWhQ?pwd=nm3c) <br />[[Google Drive]](https://drive.google.com/file/d/1uBaKoB2JaB3ydYXmpn1tv0mBZ7cAF8J9/view?usp=sharing) |
 
 ### CSL-Daily dataset
 
-To evaluate upon CSL-Daily with this checkpoint, you should remove the CorrNet block after layer2, i.e., comment line 102 and 145 in resnet.py and change the num from 3 to 2 in line 105, change self.alpha[1] & self.alpha[2] to self.alpha[0] & self.alpha[1] in line 147 & 149, respectively.
-
 | Backbone | Dev WER  | Test WER  | Pretrained model                                            |
 | -------- | ---------- | ----------- | --- |
-| ResNet18 | 30.6%      | 30.1%       | [[Baidu]](https://pan.baidu.com/s/1SbulBImqn78FEYFZV5Oz1w?pwd=mx8m) <br />[[Google Drive]](https://drive.google.com/file/d/1Ve_uzEB1teTmebuQ1XAMFQ0UV0EVEGyM/view?usp=sharing) |
+| ResNet18 | 28.6%      | 28.2%       | [[Baidu]](https://pan.baidu.com/s/1SbulBImqn78FEYFZV5Oz1w?pwd=mx8m) <br />[[Google Drive]](https://drive.google.com/file/d/1Ve_uzEB1teTmebuQ1XAMFQ0UV0EVEGyM/view?usp=sharing) |
 
 
 ​	To evaluate the pretrained model, choose the dataset from phoenix2014/phoenix2014-T/CSL/CSL-Daily in line 3 in ./config/baseline.yaml first, and run the command below：   
@@ -412,7 +409,6 @@ The priorities of configuration files are: command line > config file > default 
 `python main.py --device your_device`
 
 Note that you can choose the target dataset from phoenix2014/phoenix2014-T/CSL/CSL-Daily in line 3 in ./config/baseline.yaml.
-
 
 ### Visualizations
 For Grad-CAM visualization, you can replace the resnet.py under "./modules" with the resnet.py under "./weight_map_generation", and then run ```python generate_cam.py``` with your own hyperparameters.
