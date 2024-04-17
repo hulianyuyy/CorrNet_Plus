@@ -18,8 +18,8 @@ This sub-repo holds the code for supporting the continuous sign language recogni
 - You can install other required modules by conducting 
    `pip install -r requirements.txt`
 
-<div style="text-align: center;">
 <table align="center">
+<tbody align="center" valign="center">
     <tr>
         <td rowspan="3">Method</td>
         <td colspan="4">PHOENIX2014</td>
@@ -150,8 +150,8 @@ This sub-repo holds the code for supporting the continuous sign language recogni
         <th>28.6</th>
         <th>28.2</th>
     </tr>
+</tbody>
 </table>
-</div>
 
 ## Implementation
 The implementation for the CorrNet+ is given in [./modules/resnet.py](https://github.com/hulianyuyy/CorrNet_Plus/CorrNet_Plus_CSLR/modules/resnet.py).  
