@@ -198,16 +198,16 @@ This sub-repo holds the code for supporting the continuous sign language recogni
     </tr>
     <tr>
         <td>CorrNet+</td>
-        <td>54.54</td>
-        <td>54.56</td>
-        <td>42.31</td>
-        <td>34.48</td>
-        <td>29.13</td>
-        <td>53.76</td>
-        <td>55.32</td>
-        <td>42.74</td>
-        <td>34.86</td>
-        <td>29.42</td>
+        <th>54.54</th>
+        <th>54.56</th>
+        <th>42.31</th>
+        <th>34.48</th>
+        <th>29.13</th>
+        <th>53.76</th>
+        <th>55.32</th>
+        <th>42.74</th>
+        <th>34.86</th>
+        <th>29.42</th>
     </tr>
     <tr>
         <td colspan="11">CSL-Daily</td>
