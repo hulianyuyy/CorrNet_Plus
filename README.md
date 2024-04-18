@@ -1,5 +1,5 @@
 # CorrNet+
-This repo holds codes of the paper: CorrNet+: Sign Language Recognition and Translation via Spatial-Temporal Correlation, which is an extension of our previous work (CVPR 2023) [[paper]](https://arxiv.org/abs/2303.03202)
+This repo holds codes of the paper: CorrNet+: Sign Language Recognition and Translation via Spatial-Temporal Correlation [[paper]](https://arxiv.org/abs/2404.11111), which is an extension of our previous work (CVPR 2023) [[paper]](https://arxiv.org/abs/2303.03202)
 
 For the code supporting continuous sign language recognition and sign language translation, refer to [CorrNet_Plus_CSLR](./CorrNet_Plus_CSLR) and [CorrNet_Plus_SLT](./CorrNet_Plus_SLT) for their codes, respectively.
 
