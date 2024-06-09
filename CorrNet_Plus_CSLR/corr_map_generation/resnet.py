@@ -242,7 +242,7 @@ class ResNet(nn.Module):
 
         return nn.Sequential(*layers)
 
-    def forward(self, x):
+    def forward(self, x, dataset):
         N, C, T, H, W = x.size()
         vid = x
         x = self.conv1(x)
@@ -259,7 +259,7 @@ class ResNet(nn.Module):
         print(f'self.alpha: {self.alpha}')
         update_feature, affinities = self.corr3(x, return_affinity=True)  #bcthw, shw
         x = x + update_feature * self.alpha[1]
-        show_corr_img(vid[0].permute(1,0,2,3), affinities, out_dir=f'./corr_map_layer3', clear_folder=True) #tchw, t(2*neighbors)hw
+        show_corr_img(vid[0].permute(1,0,2,3), affinities, out_dir=f'./corr_map_layer3', clear_folder=True, dataset=dataset) #tchw, t(2*neighbors)hw
 
         x = x + self.temporal_weight3(x)
         x = self.layer4(x)
@@ -275,7 +275,7 @@ class ResNet(nn.Module):
 
         return x
 
-def show_corr_img(img, affinities, out_dir='./corr_map', clear_folder=False):  # img: chw, feature_map: chw, grads: chw3
+def show_corr_img(img, affinities, out_dir='./corr_map', clear_folder=False, dataset='phoenix2014'):  # img: chw, feature_map: chw, grads: chw3
     affinities = affinities.cpu().data.numpy()
     if clear_folder:
         if not os.path.exists(out_dir):
@@ -292,7 +292,10 @@ def show_corr_img(img, affinities, out_dir='./corr_map', clear_folder=False):  #
         current_dir = out_dir + '/' + f'timestep_{t-predefined_padding}'
         os.makedirs(current_dir)
         for i in range(S):
-            out_cam = affinities[t,i]  # only set as negative when alpha is positive for the layer
+            if 'phoenix' in dataset:
+                out_cam = affinities[t,i]  # only set as negative when alpha is positive for the layer
+            else:
+                out_cam = -affinities[t,i] 
             out_cam = out_cam - np.min(out_cam)
             out_cam = out_cam / (1e-7 + out_cam.max())
             out_cam = cv2.resize(out_cam, (img.shape[2], img.shape[3]))

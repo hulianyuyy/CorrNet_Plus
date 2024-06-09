@@ -116,6 +116,6 @@ The priorities of configuration files are: command line > config file > default 
 Note that you can choose the target dataset from phoenix2014/phoenix2014-T/CSL/CSL-Daily in line 3 in ./config/baseline.yaml.
 
 ## Visualizations
-For Grad-CAM visualization of spatial weight maps, you can replace the resnet.py under "./modules" with the resnet.py under "./weight_map_generation", and then run ```python generate_weight_map.py``` with your own hyperparameters.
+For Grad-CAM visualization of spatial weight maps, you can replace the resnet.py under "./modules" with the resnet.py under "./weight_map_generation", and then run ```python generate_weight_map.py``` with your own hyperparameters. 
 
 For Grad-CAM visualization of correlation maps, you can replace the resnet.py under "./modules" with the resnet.py under "./corr_map_generation", and then run ```python generate_corr_map.py``` with your own hyperparameters.
