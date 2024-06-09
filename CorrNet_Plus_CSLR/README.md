@@ -54,6 +54,7 @@ You can choose any one of following datasets to verify the effectiveness of Corr
    python data_preprocess-T.py --process-image --multiprocessing
    ```
 
+if you get an error like ```IndexError: list index out of range``` on the PHOENIX2014-T dataset, you may refer to [this issue](https://github.com/hulianyuyy/CorrNet/issues/10#issuecomment-1660363025) to tackle the problem.
 ### CSL dataset
 
 1. Request the CSL Dataset from this website [[download link]](https://ustc-slr.github.io/openresources/cslr-dataset-2015/index.html)
@@ -105,13 +106,13 @@ You can choose any one of following datasets to verify the effectiveness of Corr
 
 
 ​	To evaluate the pretrained model, choose the dataset from phoenix2014/phoenix2014-T/CSL/CSL-Daily in line 3 in ./config/baseline.yaml first, and run the command below：   
-`python main.py --device your_device --load-weights path_to_weight.pt --phase test`
+`python main.py --config ./config/baseline.yaml --device your_device --load-weights path_to_weight.pt --phase test`
 
 ## Training
 
 The priorities of configuration files are: command line > config file > default values of argparse. To train the SLR model, run the command below:
 
-`python main.py --device your_device`
+`python main.py --config ./config/baseline.yaml --device your_device`
 
 Note that you can choose the target dataset from phoenix2014/phoenix2014-T/CSL/CSL-Daily in line 3 in ./config/baseline.yaml.
 
