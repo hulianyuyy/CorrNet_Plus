@@ -81,10 +81,10 @@ model.train()
 
 def forward_hook(module, input, output):
     fmap_block.append(output)       #N, C, T, H, ,W 
-    if 'phoenix' in dataset:
-        model.conv2d.corr2.conv_back.register_forward_hook(forward_hook)	
-    else:
-        model.conv2d.corr3.conv_back.register_forward_hook(forward_hook)  # For CSL-Daily
+if 'phoenix' in dataset:
+    model.conv2d.corr2.conv_back.register_forward_hook(forward_hook)	
+else:
+    model.conv2d.corr3.conv_back.register_forward_hook(forward_hook)  # For CSL-Daily
 #model.conv2d.layer4[-1].conv1.register_backward_hook(backward_hook)
 
 def cam_show_img(img, feature_map, grads, out_dir):  # img: ntchw, feature_map: ncthw, grads: ncthw
