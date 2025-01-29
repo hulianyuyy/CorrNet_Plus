@@ -6,6 +6,11 @@ This sub-repo holds the code for supporting the continuous sign language recogni
 (Update on 2025/01/28) We release a demo for Continuous sign language recognition that supports multi-images and video inputs! You can watch the demo video to watch its effects, or deploy a demo locally to test its performance. 
 
 https://github.com/user-attachments/assets/a7354510-e5e0-44af-b283-39707f625a9b
+
+<div align=center>
+The web demo video
+</div>
+
 ## Prerequisites
 
 - This project is implemented in Pytorch (better >=1.13 to be compatible with ctcdecode or these may exist errors). Thus please install Pytorch first.
@@ -126,9 +131,9 @@ For Grad-CAM visualization of correlation maps, you can replace the resnet.py un
 
 ### Test with one video input
 Except performing inference on datasets, we provide a `test_one_video.py` to perform inference with only one video input. An example command is 
-```
-python test_one_video.py --model_path /path_to_pretrained_weights --video_path /path_to_your_video --device your_device
-```
+
+`python test_one_video.py --model_path /path_to_pretrained_weights --video_path /path_to_your_video --device your_device`
+
 The `video_path` can be the path to a video file or a dir contains extracted images from a video.
 
 Acceptable paramters:
@@ -145,9 +150,8 @@ We provide a demo to allow deploying continuous sign language recognition models
 <h4> The page of our demo</h4>
 </div>
 The demo video can be found in the top of this page. An example command is 
-```
-python demo.py --model_path /path_to_pretrained_weights --device your_device
-```
+
+`python demo.py --model_path /path_to_pretrained_weights --device your_device`
 
 Acceptable paramters:
 - `model_path`, the path to pretrained weights.
