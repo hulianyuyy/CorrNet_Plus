@@ -3,7 +3,7 @@ This repo holds codes of the paper: CorrNet+: Sign Language Recognition and Tran
 
 This sub-repo holds the code for supporting the continuous sign language recognition task with CorrNet+.
 
-(Update on 2025/01/28) We release a demo for Continuous sign language recognition that supports multi-images and video inputs! You can watch the demo video to watch its effects, or deploy a demo locally to test its performance. 
+(**Update on 2025/01/28**) We release a demo for Continuous sign language recognition that supports multi-images and video inputs! You can watch the demo video to watch its effects, or deploy a demo locally to test its performance. 
 
 https://github.com/user-attachments/assets/a7354510-e5e0-44af-b283-39707f625a9b
 
