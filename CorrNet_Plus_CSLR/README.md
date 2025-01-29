@@ -3,6 +3,9 @@ This repo holds codes of the paper: CorrNet+: Sign Language Recognition and Tran
 
 This sub-repo holds the code for supporting the continuous sign language recognition task with CorrNet+.
 
+(Update on 2025/01/28) We release a demo for Continuous sign language recognition that supports multi-images and video inputs! You can watch the demo video to watch its effects, or deploy a demo locally to test its performance. 
+
+https://github.com/user-attachments/assets/a7354510-e5e0-44af-b283-39707f625a9b
 ## Prerequisites
 
 - This project is implemented in Pytorch (better >=1.13 to be compatible with ctcdecode or these may exist errors). Thus please install Pytorch first.
@@ -120,3 +123,36 @@ Note that you can choose the target dataset from phoenix2014/phoenix2014-T/CSL/C
 For Grad-CAM visualization of spatial weight maps, you can replace the resnet.py under "./modules" with the resnet.py under "./weight_map_generation", and then run ```python generate_weight_map.py``` with your own hyperparameters. 
 
 For Grad-CAM visualization of correlation maps, you can replace the resnet.py under "./modules" with the resnet.py under "./corr_map_generation", and then run ```python generate_corr_map.py``` with your own hyperparameters.
+
+### Test with one video input
+Except performing inference on datasets, we provide a `test_one_video.py` to perform inference with only one video input. An example command is 
+```
+python test_one_video.py --model_path /path_to_pretrained_weights --video_path /path_to_your_video --device your_device
+```
+The `video_path` can be the path to a video file or a dir contains extracted images from a video.
+
+Acceptable paramters:
+- `model_path`, the path to pretrained weights.
+- `video_path`, the path to a video file or a dir contains extracted images from a video.
+- `device`, which device to run inference, default=0.
+- `language`, the target sign language, default='phoenix', choices=['phoenix', 'csl'].
+- `max_frames_num`, the max input frames sampled from an input video, default=360.
+
+### Demo
+We provide a demo to allow deploying continuous sign language recognition models locally to test its effects. The demo page is shown as follows.
+<div align=center>
+<img width="800" src="./demo.jpg"/>
+<h4> The page of our demo</h4>
+</div>
+The demo video can be found in the top of this page. An example command is 
+```
+python demo.py --model_path /path_to_pretrained_weights --device your_device
+```
+
+Acceptable paramters:
+- `model_path`, the path to pretrained weights.
+- `device`, which device to run inference, default=0.
+- `language`, the target sign language, default='phoenix', choices=['phoenix', 'csl'].
+- `max_frames_num`, the max input frames sampled from an input video, default=360.
+
+After running the command, you can visit `http://0.0.0.0:7862` to play with the demo. You can also change it into an public URL by setting `share=True` in line 176 in `demo.py`.
